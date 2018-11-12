@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="10546" started-at="2019-03-18T20:20:58Z" finished-at="2019-03-18T20:21:09Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="10546" started-at="2019-03-18T20:20:58Z" finished-at="2019-03-18T20:21:09Z">
+      <class name="seleniumTests.Test1">
+        <test-method status="PASS" signature="titulo()[pri:0, instance:seleniumTests.Test1@69ea3742]" name="titulo" duration-ms="10485" started-at="2019-03-18T20:20:58Z" finished-at="2019-03-18T20:21:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- titulo -->
+      </class> <!-- seleniumTests.Test1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
