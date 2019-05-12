@@ -25,7 +25,7 @@ pipeline {
     }
     stage('JMeter') {
       steps {
-        sh '${\'/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/bin/jmeter -n -t Prueba1.jmx\'}'
+        bat '/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/bin/jmeter -n -t Prueba1.jmx'
       }
     }
   }
