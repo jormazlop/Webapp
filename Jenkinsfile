@@ -26,7 +26,7 @@ pipeline {
     stage('JMeter') {
       steps {
         dir('C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0') {
-        bat 'rmdir Resultados'
+        bat 'rmdir /S /Q Resultados'
         bat 'mkdir Resultados'
         bat 'C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/bin/jmeter -n -t C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/Scripts/Prueba1.jmx -l C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/Resultados/PruebasNoFuncionales.csv -e -o C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/Resultados/HtmlReport'
         }
