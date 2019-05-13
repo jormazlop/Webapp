@@ -25,6 +25,10 @@ pipeline {
     }
     stage('JMeter') {
       steps {
+        bat 'cd  C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/Resultados'
+        bat 'rd HtmlReport /S /Q'
+        bat 'cd C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0'
+        bat 'del Resultados /S /Q'
         bat 'C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/bin/jmeter -n -t C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/Scripts/Prueba1.jmx -l C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/Resultados/Prueba1.csv -e -o C:/Jorge/Apuntes/TFG/2018/apache-jmeter-5.0/apache-jmeter-5.0/Resultados/HtmlReport'
       }
     }
