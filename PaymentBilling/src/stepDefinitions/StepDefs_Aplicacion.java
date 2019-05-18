@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -21,8 +21,8 @@ public class StepDefs_Aplicacion {
 	@Given("el usuario esta conectado")
 	public void estas_conectado() throws Exception{
 
-		System.setProperty("webdriver.gecko.driver","C:\\Jorge\\Apuntes\\TFG\\2018\\geckodriver-v0.23.0-win64\\geckodriver.exe");
-		driver = new FirefoxDriver();    
+	   System.setProperty("webdriver.chrome.driver","C:\\Jorge\\Apuntes\\TFG\\2018\\chromedriver_win32\\chromedriver.exe");
+	   driver = new ChromeDriver();  
 	}
 
 	@When("se carga la pagina principal de la aplicacion")
