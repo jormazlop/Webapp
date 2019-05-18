@@ -2,7 +2,7 @@ package seleniumTests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -23,8 +23,8 @@ public class TestSelenium {
 	@BeforeAll
 	public static void init(){
 		
-	System.setProperty("webdriver.gecko.driver","C:\\Jorge\\Apuntes\\TFG\\2018\\geckodriver-v0.23.0-win64\\geckodriver.exe");
-	driver = new FirefoxDriver();
+	System.setProperty("webdriver.chrome.driver","C:\\Jorge\\Apuntes\\TFG\\2018\\chromedriver_win32\\chromedriver.exe");
+	driver = new ChromeDriver();
 	
 	}
 	
@@ -61,7 +61,7 @@ public class TestSelenium {
 	    // Lanza Firefox y redirecciona a la URL base
 	    driver.get(baseUrl);
 
-	    // Cambia a la pestaña nuevo registro
+	    // Cambia a la pestaÃ±a nuevo registro
         driver.findElement(By.id("generalinfo")).click();
         
 	    actualTitle = driver.getTitle();
@@ -82,7 +82,7 @@ public class TestSelenium {
 	    // Lanza Firefox y redirecciona a la URL base
 	    driver.get(baseUrl);
 	    
-	    // Accede a la pestaña modificar
+	    // Accede a la pestaÃ±a modificar
         driver.findElement(By.id("modify")).click();
 
 	    boolean b = driver.getPageSource().contains(expectedError);
@@ -104,7 +104,7 @@ public class TestSelenium {
 	    // Lanza Firefox y redirecciona a la URL base
 	    driver.get(baseUrl);
 	    
-	    // Accede a la pestaña admin
+	    // Accede a la pestaÃ±a admin
         driver.findElement(By.id("ahome")).click();
         
 
@@ -128,7 +128,7 @@ public class TestSelenium {
 	    driver.get(baseUrl);
 	    
 
-	    // Accede a la pestaña contacto
+	    // Accede a la pestaÃ±a contacto
         driver.findElement(By.id("contactus")).click();
 	    actualTitle = driver.getTitle();
 		assertEquals(actualTitle, expectedTitle);
