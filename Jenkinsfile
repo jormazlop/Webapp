@@ -38,5 +38,10 @@ pipeline {
         build 'Heroku'
       }
     }
+    stage('Performance') {
+      steps {
+        bzt(params: 'Prueba1.jmx', workingDirectory: 'C:\\Jorge\\Apuntes\\TFG\\2018\\apache-jmeter-5.0\\apache-jmeter-5.0\\Scripts')
+      }
+    }
   }
 }
