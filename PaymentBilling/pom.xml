@@ -88,7 +88,7 @@
 
   <build>
   
-  <testSourceDirectory>src</testSourceDirectory>
+  <testSourceDirectory>src/jUnitTests</testSourceDirectory>
   
     <plugins>
     
