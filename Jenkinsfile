@@ -48,10 +48,5 @@ pipeline {
         build 'Heroku'
       }
     }
-    stage('Final correcto') {
-      steps {
-        emailext(subject: 'Resultado Jenkins', body: '¡Despliegue correcto!', to: 'jormazlop@gmail.com')
-      }
-    }
   }
 }
