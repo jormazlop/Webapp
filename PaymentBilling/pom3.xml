@@ -100,7 +100,7 @@
 
   <build>
   
-  <testSourceDirectory>src/cucumberTests</testSourceDirectory>
+  <testSourceDirectory>src</testSourceDirectory>
   
     <plugins>
     
