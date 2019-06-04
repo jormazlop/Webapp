@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>PaymentBilling</groupId>
+  <artifactId>PaymentBilling</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <junit.version>5.4.0</junit.version>
+      <sql.maven.plugin.version>1.5</sql.maven.plugin.version>
+      <postgresql.jdbc.version>9.1-901.jdbc4</postgresql.jdbc.version>
+      <allure-maven.version>2.10.0</allure-maven.version>
+      <allure-junit5.version>2.10.0</allure-junit5.version>
+      <aspectj.version>1.9.1</aspectj.version>
+      <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+  </properties>
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.4.0</version>
+    </dependency>
+     
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>3.12.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.9.5</version>
+    </dependency>
+ 
+   <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.13</version>
+   </dependency>
+    
+   <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>selenium-jupiter</artifactId>
+      <version>3.2.0</version>
+   </dependency>
+   
+   <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>4.3.0</version>
+   </dependency>
+     
+   <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-core</artifactId>
+      <version>4.3.0</version>
+   </dependency>
+   
+  <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>gherkin</artifactId>
+      <version>5.1.0</version>
+  </dependency>
+
+  <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>4.3.0</version>
+  </dependency>
+
+   <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-junit5</artifactId>
+      <version>${allure-maven.version}</version>
+   </dependency>
+  
+  </dependencies>
+
+  <build>
+  
+  <testSourceDirectory>src/seleniumTests</testSourceDirectory>
+  
+    <plugins>
+    
+     <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <version>3.8.0</version>
+       <configuration>
+         <source>1.8</source>
+         <target>1.8</target>
+       </configuration>
+     </plugin>
+ 
+     <plugin>
+       <artifactId>maven-surefire-plugin</artifactId>
+       <version>${maven-surefire-plugin.version}</version>
+       <configuration>
+       <argLine>
+        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+       </argLine>
+       <systemProperties>		
+       <property>		
+       <name>allure.results.directory</name>		
+       <value>${project.build.directory}/allure-results</value>		
+       </property>		
+       </systemProperties>
+       </configuration>
+     </plugin>
+    
+     <plugin>
+       <groupId>io.qameta.allure</groupId>
+       <artifactId>allure-maven</artifactId>
+       <version>${allure-maven.version}</version>
+       <configuration>
+         <reportDirectory>allure-report</reportDirectory>
+       </configuration>
+     </plugin>
+     
+     <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <version>3.8.0</version>
+       <configuration>
+         <source>1.8</source>
+         <target>1.8</target>
+       </configuration>
+     </plugin>
+  
+    </plugins>
+    
+  </build> 
+  
+</project>
