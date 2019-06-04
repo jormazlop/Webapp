@@ -18,9 +18,19 @@ pipeline {
 
       }
     }
-    stage('Build') {
+    stage('Pruebas Unitarias') {
       steps {
-        build 'WebApp'
+        build 'Junit'
+      }
+    }
+    stage('Pruebas sistema') {
+      steps {
+        build 'Selenium'
+      }
+    }
+    stage('Pruebas aceptacion') {
+      steps {
+        build 'Cucumber'
       }
     }
     stage('JMeter') {
@@ -40,7 +50,7 @@ pipeline {
     }
     stage('Final correcto') {
       steps {
-        emailext(subject: 'Resultado Jenkins', body: '¡Despliegue correcto!', to: 'jormazlop@gmail.com')
+        emailext(subject: 'Resultado Jenkins', body: 'Â¡Despliegue correcto!', to: 'jormazlop@gmail.com')
       }
     }
   }
